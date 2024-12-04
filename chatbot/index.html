@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Interface</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-fluid vh-100 d-flex">
+    <!-- Sidebar (Conversation History) -->
+    <div class="bg-light border-end p-3" id="sidebar">
+      <h5>Historique</h5>
+      <ul class="list-unstyled" id="history">
+        <li class="text-muted">Aucune conversation...</li>
+      </ul>
+      <button id="new-conversation-btn" class="btn btn-secondary mt-3">Nouvelle conversation</button>
+    </div>
+
+    <!-- Main Chat Section -->
+    <div class="flex-grow-1 d-flex flex-column" id="main-section">
+      <!-- Initial Center Section -->
+      <div id="initial-center" class="flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex w-50">
+          <input type="text" id="user-input" class="form-control" placeholder="Écrivez votre question ici...">
+          <button id="center-send-btn" class="btn btn-primary ms-2">Envoyer</button>
+        </div>
+        <div id="suggestion-buttons" class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+          <button class="btn btn-outline-secondary btn-sm">Qui êtes-vous ?</button>
+          <button class="btn btn-outline-secondary btn-sm">Que pouvez-vous faire</button>
+          <button class="btn btn-outline-secondary btn-sm">Quels services offrez-vous ?</button>
+        </div>
+      </div>
+
+      <!-- Chat Messages (Hidden initially) -->
+      <div id="chat-area" class="flex-grow-1 p-4 d-none">
+        <!-- Placeholder text -->
+        <div class="text-muted text-center">Commencez une conversation</div>
+      </div>
+
+      <!-- Input Field at Bottom -->
+      <div id="bottom-input" class="p-3 border-top d-none">
+        <div class="input-group">
+          <input type="text" id="bottom-user-input" class="form-control" placeholder="Écrivez votre message ici...">
+          <button id="bottom-send-btn" class="btn btn-primary">Envoyer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
